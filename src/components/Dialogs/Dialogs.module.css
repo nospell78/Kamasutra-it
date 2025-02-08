@@ -1,9 +1,23 @@
-.header {
-    grid-area: h;
-    background-color: green;
+.dialogs {
+  display: grid;
+  grid-template-columns: 2fr 10fr;
 }
 
-.header img {
-    width: 20px;
+.dialogItems {
+  padding: 30px;
 }
 
+.messagesItems {
+  padding: 30px;
+}
+
+.dialog.active {
+  color: rgb(109, 153, 133);
+}
+.message {
+  background-color: #c7d0cc;
+  padding: 20px;
+  border-radius: 20px;
+  margin: 5px 0;
+  max-width: 70%;
+}

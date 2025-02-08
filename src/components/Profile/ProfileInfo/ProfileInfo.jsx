@@ -2,19 +2,15 @@ import React from 'react';
 import s from './Profile.module.css';
 import MyPosts from './MyPost/MyPosts';
 
-const Profile = () => {
+const ProfileInfo = (props) => {
   return (
     <div>
       <div>
-        <img src='https://avatars.mds.yandex.net/get-mpic/4356316/img_id226114034044091517.jpeg/orig' />
+        <img src={props.imgUrl} alt='Здесь должны быть картинка' />
       </div>
-      <div>
-        ava + description
-      </div>
-        <ProfileInfo/>
-      <MyPosts />
+      <div className={s.descriptionBlock}>{props.text}</div>
     </div>
-  )
-}
+  );
+};
 
-export default Profile;
+export default ProfileInfo;

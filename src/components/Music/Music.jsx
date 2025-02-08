@@ -1,9 +1,6 @@
-import React from "react";
-import s from "./News.module.css"
-const News = (props) => {
-    return (<div>
-            News
-        </div>
-    )
-}
-export default News;
+import React from 'react';
+import s from './Music.module.css';
+const Music = (props) => {
+  return <div>Music</div>;
+};
+export default Music;
