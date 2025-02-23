@@ -1,23 +1,51 @@
-.dialogs {
-  display: grid;
-  grid-template-columns: 2fr 10fr;
+.dialogsContainer {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* Левая колонка - 1 часть, правая - 2 части */
+    gap: 20px; /* Расстояние между колонками */
 }
 
-.dialogItems {
-  padding: 30px;
+.dialogsItems {
+    background-color: #f1f1f1;
+    padding: 10px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
 }
 
-.messagesItems {
-  padding: 30px;
+.messages {
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
 }
 
-.dialog.active {
-  color: rgb(109, 153, 133);
+.inputBlock {
+    margin-bottom: 20px;
 }
-.message {
-  background-color: #c7d0cc;
-  padding: 20px;
-  border-radius: 20px;
-  margin: 5px 0;
-  max-width: 70%;
+
+.textarea {
+    width: 100%;
+    height: 50px;
+    margin-bottom: 10px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
+
+/*.dialogItems {*/
+/*    padding: 30px;*/
+/*}*/
+
+/*.messagesItems {*/
+/*    padding: 30px;*/
+/*}*/
+
+
+/*.message {*/
+/*    background-color: #c7d0cc;*/
+/*    padding: 20px;*/
+/*    border-radius: 20px;*/
+/*    margin: 5px 0;*/
+/*    max-width: 70%;*/
+/*}*/
