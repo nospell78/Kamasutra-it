@@ -1,3 +1,10 @@
+import profileReducer from './profile-reducer';
+import dialogsReducer from './dialogs-reducer';
+
+const ADD_POST = 'ADD-POST';
+const ADD_MESSAGE = 'ADD-MESSAGE';
+const UPDATE_NEW_TEXT_POST = 'UPDATE-NEW-TEXT-POST';
+const UPDATE_NEW_MESSAGE_POST = 'UPDATE-NEW-MESSAGE-POST';
 let store = {
   _state: {
     profilePage: {
@@ -10,7 +17,6 @@ let store = {
       text: 'ava + description',
       newPostText: 'it-kamasutra.com',
     },
-
     dialogsPage: {
       dialogs: [
         { id: 1, name: 'Cаша' },
@@ -43,30 +49,9 @@ let store = {
   },
 
   dispatch(action) {
-    if (action.type === 'ADD-POST') {
-      let newPost = {
-        id: 5,
-        message: this._state.profilePage.newPostText,
-        likeCount: 1,
-      };
-      this._state.profilePage.posts.push(newPost);
-      this._state.profilePage.newPostText = '';
-      this._callSubscriber(this._state);
-    } else if (action.type === 'UPDATE-NEW-TEXT-POST') {
-      this._state.profilePage.newPostText = action.newText;
-      this._callSubscriber(this._state);
-    } else if (action.type === 'ADD-MESSAGE') {
-      let newMessage = {
-        id: 9,
-        message: this._state.dialogsPage.newMessageText,
-      };
-      this._state.dialogsPage.message.push(newMessage);
-      this._state.dialogsPage.newMessageText = '';
-      this._callSubscriber(this._state);
-    } else if (action.type === 'UPDATE-NEW-MESSAGE-POST') {
-      this._state.dialogsPage.newMessageText = action.newTMessage;
-      this._callSubscriber(this._state);
-    }
+    this._state.profilePage = profileReducer(this._state.profilePage, action);
+    this._state.dialogsPage = dialogsReducer(this._state.dialogsPage, action);
+    this._callSubscriber(this._state);
   },
 };
 
